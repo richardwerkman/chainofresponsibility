@@ -14,9 +14,11 @@ namespace ChainOfResponsibility
         [STAThread]
         static void Main()
         {
+            Lottery Lottery = new Lottery(new Ticket("AB", "12345"));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(Lottery));
         }
     }
 }
