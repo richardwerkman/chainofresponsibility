@@ -14,7 +14,7 @@ namespace ChainOfResponsibility
 
         public override string handleRequest(Ticket Ticket, Lottery Lottery)
         {
-            if (Ticket.TicketNumbers == Lottery.WinningTicket.TicketNumbers)
+            if (Ticket.TicketNumbers == Lottery.WinningTicket.TicketNumbers && Ticket.TicketLetters.Equals(Lottery.WinningTicket.TicketLetters, StringComparison.CurrentCultureIgnoreCase))
             {
                 return "Congratulations!!! You won the jackpot of $5,000,000!";
             }

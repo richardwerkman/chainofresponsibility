@@ -12,10 +12,11 @@ namespace ChainOfResponsibility
 
         public override string handleRequest(Ticket Ticket, Lottery Lottery)
         {
-            if (Ticket.TicketLetters == Lottery.WinningTicket.TicketLetters)
+            if (Ticket.TicketLetters.Equals(Lottery.WinningTicket.TicketLetters, StringComparison.CurrentCultureIgnoreCase))
             {
                 return "Congratulations you had the letters right! You have won $20!";
-            } else
+            }
+            else
             {
                 if (Successor != null)
                 {
